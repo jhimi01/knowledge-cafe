@@ -1,12 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './component/Navbar/Navbar';
 
 function App() {
   return (
-    <div className="App">
-     
+    <div className="App container">
+    <Navbar></Navbar>
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
