@@ -3,6 +3,7 @@ import "./App.css";
 import Cards from "./component/Cards/Cards";
 import Navbar from "./component/Navbar/Navbar";
 import Sidebar from "./component/Sidebar/Sidebar";
+import Blog from "./component/Blog/Blog";
 
 function App() {
  const [readtime, setReadtime] = useState(0);
@@ -31,6 +32,8 @@ function App() {
           <Sidebar bookmark={bookmark} readtime={readtime}></Sidebar>
         </div>
       </div>
+      <hr />
+      <Blog></Blog>
     </div>
   );
 }

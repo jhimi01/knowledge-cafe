@@ -28,7 +28,7 @@ console.log(card)
   </div>
     <h3 className="card-text text-start">{details}</h3>
     <p className='text-start text-secondary'>#beginners #programming</p>
-    <h6 onClick={()=>{addwatchTime(time)}} style={{color:'#6047EC', cursor:'pointer'}} className='text-start d-block text-decoration-underline'>Mark as read</h6>
+    <h6 onClick={()=>{addwatchTime(time)}} style={{color:'#6047EC', cursor:'pointer',width:'95px'}} className='text-start d-block text-decoration-underline'>Mark as read</h6>
   </div>
 </div>
 <hr />
