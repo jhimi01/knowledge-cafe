@@ -7,16 +7,25 @@ import Blog from "./component/Blog/Blog";
 
 function App() {
  const [readtime, setReadtime] = useState(0);
- const [card, setCard] = useState([0]);
+ const [card, setCard] = useState([]);
  const[itembook, setItembook] = useState([]);
 
   // bookmarks
  const bookmarks = (card)=>{
-     const newbooked = [...itembook, card]
-     setItembook(newbooked)
+  const existData = itembook.find(matchData => matchData.id === card.id)
+  if (!existData) {
+    const newbooked = [...itembook, card]
+    setItembook(newbooked)
+  }else{
+    alert('Booked')
+  }
  }
- console.log(itembook)
+//  console.log(itembook)
 
+ //  watchtime
+   const addwatchTime = (time) =>{
+   setReadtime(readtime + time)
+   }
 
 
  useEffect(()=>{
@@ -28,10 +37,6 @@ function App() {
 
 
 
-//  watchtime
-  const addwatchTime = (time) =>{
-  setReadtime(readtime + time)
-  }
 
 
  

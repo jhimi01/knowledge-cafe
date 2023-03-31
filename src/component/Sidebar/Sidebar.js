@@ -1,8 +1,12 @@
 import React from "react";
 import './Sidebar.css';
+import Bookmarkeditem from "../Bookmarkeditem/Bookmarkeditem";
 
 const Sidebar = ({readtime, itembook}) => {
-  
+  for(const id in itembook){
+console.log(id)
+  }
+// console.log(itembook)
   return (
     <>
      <div className="sidebar">
@@ -15,9 +19,7 @@ const Sidebar = ({readtime, itembook}) => {
       <div className="bg-light rounded p-3 text-start">
         <h3>Bookmarked Blogs :{itembook.length}</h3>
         {
-          itembook.map(singleitem =>  <h5 className="bg-white rounded p-2 mb-4">
-         {singleitem.details}
-        </h5>)
+          itembook.map((singleitem, index) =>  <Bookmarkeditem key={index} singleitem={singleitem}></Bookmarkeditem>)
         }
       </div>
      </div>
