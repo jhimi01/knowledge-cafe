@@ -5,23 +5,34 @@ import Navbar from "./component/Navbar/Navbar";
 import Sidebar from "./component/Sidebar/Sidebar";
 import Blog from "./component/Blog/Blog";
 
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
  const [readtime, setReadtime] = useState(0);
  const [card, setCard] = useState([]);
  const[itembook, setItembook] = useState([]);
 
   // bookmarks
- const bookmarks = (card)=>{
-  const existData = itembook.find(matchData => matchData.id === card.id)
-  if (!existData) {
-    const newbooked = [...itembook, card]
-    setItembook(newbooked)
+  const bookmarks = (card)=>{
+    const existData = itembook.find(matchData => matchData.id === card.id)
+    if (!existData) {
+      const newbooked = [...itembook, card]
+      setItembook(newbooked)
   }else{
-    alert('Booked')
+    toast("already bookmarked", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
   }
  }
-//  console.log(itembook)
-
  //  watchtime
    const addwatchTime = (time) =>{
    setReadtime(readtime + time)
@@ -33,12 +44,6 @@ function App() {
      .then(res => res.json())
      .then(data => setCard(data))
  },[]);
-
-
-
-
-
-
  
 
   return (
@@ -54,6 +59,7 @@ function App() {
       </div>
       <hr />
       <Blog></Blog>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

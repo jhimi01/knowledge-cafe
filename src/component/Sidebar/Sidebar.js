@@ -3,10 +3,6 @@ import './Sidebar.css';
 import Bookmarkeditem from "../Bookmarkeditem/Bookmarkeditem";
 
 const Sidebar = ({readtime, itembook}) => {
-  for(const id in itembook){
-console.log(id)
-  }
-// console.log(itembook)
   return (
     <>
      <div className="sidebar">
