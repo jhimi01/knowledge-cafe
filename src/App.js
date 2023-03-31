@@ -21,7 +21,7 @@ function App() {
       const newbooked = [...itembook, card]
       setItembook(newbooked)
   }else{
-    toast("already bookmarked", {
+    toast("already exist", {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,

@@ -10,8 +10,7 @@ const Blog = () => {
           'Props' are passed down from a parent component to a child component
           as a way to communicate information between them. props are read-only,
           which means that they cannot be modified by the child component. A
-          parent component can update the props of a child component by
-          re-rendering it with different values.
+          parent component can update the props of a child component.
           <br />
           'State' represents the internal state of a component. It is used to
           keep track of data that can change over time, such as user input, the
