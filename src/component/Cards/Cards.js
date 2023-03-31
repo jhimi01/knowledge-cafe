@@ -1,7 +1,8 @@
+// import React from 'react';
 import React, { useEffect, useState } from 'react';
 import Singlecard from '../Singlecard/Singlecard';
 
-const Cards = () => {
+const Cards = ({addwatchTime, addbookmark}) => {
     const [card, setCard] = useState([]);
 
     useEffect(()=>{
@@ -9,10 +10,11 @@ const Cards = () => {
         .then(res => res.json())
         .then(data => setCard(data))
     },[]);
-console.log(card)
+
+
     return (
         <div>
-            {card.map(card => <Singlecard card={card}></Singlecard>)}
+            {card.map(card => <Singlecard addbookmark={addbookmark} addwatchTime={addwatchTime} card={card} key={card.id}></Singlecard>)}
         </div>
     );
 };
