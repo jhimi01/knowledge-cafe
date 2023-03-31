@@ -2,7 +2,7 @@ import React from 'react';
 
 const Singlecard = ({card}) => {
     console.log(card)
-    const {url, user, user_img, date, details, time, id} = card;
+    const {url, user, user_img, date, details, time} = card;
     return (
         <div>
             <div className=" mb-4 w-full">
@@ -28,7 +28,7 @@ const Singlecard = ({card}) => {
   </div>
     <h3 className="card-text text-start">{details}</h3>
     <p className='text-start text-secondary'>#beginners #programming</p>
-    <a className='text-start d-block' href="#">Mark as read</a>
+    <h6 style={{color:'#6047EC', cursor:'pointer'}} className='text-start d-block text-decoration-underline'>Mark as read</h6>
   </div>
 </div>
 <hr />
